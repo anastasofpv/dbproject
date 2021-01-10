@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+       body {
+         background-image: url('https://oikodomika-petrakakis.gr/wp-content/uploads/2019/05/karyatida-megali.jpg');
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         background-size: cover;
+       }
+
+       </style>
+ </head>
+<body>
+
+  <form action="#" method="post">
+    <p>Create:</p>
+    <p><input type="text" name="create"></p>
+    <p><input type="submit" value="CREATE"></p>
+  </form>
+  <form action="#" method="post">
+    <p>View Table:</p>
+    <p><input type="text" name="view_table"></p>
+    <p><input type="submit" value="VIEW_TABLE"></p>
+  </form>
+  <label for="cars">Choose a table:</label>
+
+  <form action="#" method="post">
+    <select name="tables" id="tables">
+      {% for table_name in table_names %}
+      <option value="{{table_name[0]}}">{{table_name[0]}}</option>
+      {% endfor %}
+    </select>
+    <input type="submit" value="insert">
+  </form>
+  <a href="/">Go back to home page</a>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+           body {
+             background-image: url('https://oikodomika-petrakakis.gr/wp-content/uploads/2019/05/karyatida-megali.jpg');
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-size: cover;
+           }
+           </style>
+     </head>
+<body>
+    <form action="{{url_for('addrec')}}" method="post">
+        {% for column_name in column_names %}
+        <p>{{column_name[0]}}<input type="text" name="{{column_name[0]}}"></p>
+        {% endfor %}
+        <p><input type="submit" value="submit"></p>
+    </form>
+    <a href="/">Go back to home page</a>
+    <a href = "/sql">SQL</a>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+   <head>
+      <style>
+         body {
+           background-image: url('https://oikodomika-petrakakis.gr/wp-content/uploads/2019/05/karyatida-megali.jpg');
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           background-size: cover;
+         }
+         </style>
+   </head>
+   <body>
+      <h1>{{table_name}}</h1>
+      <table border = 1>
+         <thead>
+            {% for column in columns %}
+            <td><b>{{column[0]}}</b></td>
+            {% endfor %}
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+                {% for r in row %}
+               <td>{{r}}</td>	
+               {% endfor %}
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <p><a href = "/">Go back to home page</a></p>
+      <p><a href = "/school_trip">See how much it Costs for a school trip</a></p>
+      <p><a href = "/sql">SQL</a></p>
+   </body>
+</html>
