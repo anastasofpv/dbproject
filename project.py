@@ -43,6 +43,11 @@ def delete_item(con, table_name, **params):
     results = query(con,sql)
     return results
 
+def update_item(con, table_name, column_to_change, new_value, searched_column, searched_value):
+    sql = """ UPDATE `{}` SET `{}`='{}' WHERE `{}`='{}' """.format(table_name, column_to_change, new_value, searched_column, searched_value)
+    results = query(con,sql)
+    return results
+
 
 def view_table(con, table_name):
     column_names = get_column_names(con,table_name)
@@ -118,3 +123,5 @@ def get_table_names(conn):
     #print(x,y)
     # x,y=query2(conn,"articles","select * from articles")
     # print(x,y)
+    #x = update_item(conn, "articles", "name","new name", "id", 55)
+    #print(x)
